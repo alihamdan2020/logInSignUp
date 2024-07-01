@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
 
     <title>index page</title>
+    <style>
+        a{
+            display: block;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <?php
@@ -30,12 +36,15 @@ if (isset($_SESSION['userId']))
 <p>your name is <?php echo($data[0]['name']) ?></p>
 <p>do you want to <a href="logout.php">log out </a></p>
 <?php
+mysqli_free_result($result);
+mysqli_close($myconn);
 }
 else
 {
 ?>
-   <a href="signup.php">sign up</a> <br>
+   <a href="signup.php">sign up</a> 
    <a href="login.php">log in</a> 
+   <a href="show.php">show all users</a> 
 <?php
 }
 ?>

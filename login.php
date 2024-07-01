@@ -2,7 +2,7 @@
 
 $is_valid=false;
 //to check if submit the form
-if($_SERVER['REQUEST_METHOD']==='POST')
+if(isset($_POST['lgin']))
 {
     $myconn=require "database.php";
     $email=$_POST['email'];
@@ -66,7 +66,7 @@ $is_valid=true;
         <input type="password" name="password" id="password">
     </div>
     <div>
-        <button>log in</button>
+        <button name="lgin">log in</button>
     </div>
 </form>    
 </body>
